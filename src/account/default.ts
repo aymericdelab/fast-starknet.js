@@ -159,16 +159,19 @@ export class Account extends Provider implements AccountInterface {
 
   public async execute(
     calls: AllowArray<Call>,
-    abis: Abi[] | undefined = undefined,
-    transactionsDetail: InvocationsDetails = {}
+    abis: Abi[] | undefined = undefined
+    // transactionsDetail: InvocationsDetails = {}
   ): Promise<InvokeFunctionResponse> {
     const transactions = Array.isArray(calls) ? calls : [calls];
-    const nonce = toBN(transactionsDetail.nonce ?? (await this.getNonce()));
-    const maxFee =
-      transactionsDetail.maxFee ??
-      (await this.getSuggestedMaxFee({ type: 'INVOKE', payload: calls }, transactionsDetail));
+    // const nonce = toBN(transactionsDetail.nonce ?? (await this.getNonce()));
+    const nonce = 0;
+    // const maxFee =
+    //   transactionsDetail.maxFee ??
+    //   (await this.getSuggestedMaxFee({ type: 'INVOKE', payload: calls }, transactionsDetail));
+    const maxFee = 0;
     const version = toBN(transactionVersion);
-    const chainId = await this.getChainId();
+    // const chainId = await this.getChainId();
+    const chainId = '0x534e5f474f45524c49';
 
     const signerDetails: InvocationsSignerDetails = {
       walletAddress: this.address,
