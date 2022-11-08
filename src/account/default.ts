@@ -1,4 +1,4 @@
-import { ZERO } from '../constants';
+import { StarknetChainId, ZERO } from '../constants';
 import { ProviderInterface, ProviderOptions } from '../provider';
 import { Provider } from '../provider/default';
 import { BlockIdentifier } from '../provider/utils';
@@ -171,7 +171,7 @@ export class Account extends Provider implements AccountInterface {
     const maxFee = 0;
     const version = toBN(transactionVersion);
     // const chainId = await this.getChainId();
-    const chainId = '0x534e5f474f45524c49';
+    const chainId = StarknetChainId.TESTNET;
 
     const signerDetails: InvocationsSignerDetails = {
       walletAddress: this.address,
