@@ -1,7 +1,7 @@
 {
-  "name": "starknet",
-  "version": "4.9.0",
-  "description": "JavaScript library for StarkNet",
+  "name": "fast-starknet",
+  "version": "0.0.1",
+  "description": "Fast JavaScript library for StarkNet",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
